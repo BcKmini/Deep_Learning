@@ -45,23 +45,23 @@ __2.5.2 XOR 게이트 구현하기
 퍼셉트론의 매개변수 값을 정하는 것은 인간이 하며 진리표라는 '학습 데이터'를 보면서 매개변수의 값을 생각한다.
 세 가지의 게이트에서 다른 것은 매개변수(가중치와 임계값)의 값뿐이다.
 간단한 구현 AND 함수
-'''
-def AND(x1, x2):  
-    w1, w2, theta = 0.5, 0.5, 0.7  
-    tmp = x1*w1 + x2*w2  
-    if tmp <= theta:  
-        return 0  
-    elif tmp > theta:  
-        return 1  
-'''
+
+    def AND(x1, x2):  
+        w1, w2, theta = 0.5, 0.5, 0.7  
+        tmp = x1*w1 + x2*w2  
+        if tmp <= theta:  
+            return 0  
+        elif tmp > theta:  
+            return 1  
+
 매개변수 w1, w2, theta는 함수 안에서 초기화하고, 가중치를 곱한 임계값을 넘으면 1, 그 외에는 0을 반환
 출력
-'''
-print(AND(0,0))  
-print(AND(1,0))  
-print(AND(0,1))  
-print(AND(1,1))  
-'''
+
+    print(AND(0,0))  
+    print(AND(1,0))  
+    print(AND(0,1))  
+    print(AND(1,1))  
+
 출력값
 
 0  
@@ -70,27 +70,26 @@ print(AND(1,1))
 1  
 
 # 가중치에 편향 도입
-'''
-import numpy as np  
-x = np.array([0, 1]) # 입력  
-w = np.array([0.5, 0.5]) # 가중치  
-b = -0.7 # 편향  
-print(w*x)  
-print(np.sum(w*x))  
-print(np.sum(w*x) + b)  
-'''
+
+    import numpy as np  
+    x = np.array([0, 1]) # 입력  
+    w = np.array([0.5, 0.5]) # 가중치  
+    b = -0.7 # 편향  
+    print(w*x)  
+    print(np.sum(w*x))  
+
 # 가중치와 편향 구현하기
-'''
-def AND(x1, x2):  
-    x = np.array([x1, x2])  
-    w = np.array([0.5, 0.5])  
-    b = -0.7  
-    tmp = np.sum(w*x) + b  
-    if tmp <= 0:  
-        return 0  
-    else:   
-        return 1  
-'''
+
+    def AND(x1, x2):  
+        x = np.array([x1, x2])  
+        w = np.array([0.5, 0.5])  
+        b = -0.7  
+        tmp = np.sum(w*x) + b  
+        if tmp <= 0:  
+            return 0  
+        else:   
+            return 1  
+
 가중치와 편향 계산: tmp = np.sum(w*x) + b는 가중치와 입력을 곱하고 그 합에 편향 b를 더한 값입니다.
 np.sum(w*x)에서 w와 x의 각 요소를 곱하고 그 결과를 더하여 하나의 값으로 만듭니다. 이 값에 편향 b를 더하여 최종 값을 얻습니다.
 
@@ -98,28 +97,28 @@ np.sum(w*x)에서 w와 x의 각 요소를 곱하고 그 결과를 더하여 하�
 즉, tmp 값이 임계값(0)을 넘지 않으면 0, 넘으면 1로 출력합니다.
 출력
 
-print(AND(0,0))  
-print(AND(1,0))  
-print(AND(0,1))  
-print(AND(1,1))  
+    print(AND(0,0))  
+    print(AND(1,0))  
+    print(AND(0,1))  
+    print(AND(1,1))  
 
 # NAND 게이트 구현
-'''
-def NAND(x1, x2):  
-    x = np.array([x1, x2])  
-    w = np.array([-0.5, -0.5])  
-    b = 0.7  
-    tmp = np.sum(w*x) + b  
-    if tmp <= 0:  
-        return 0  
-    else:  
-        return 1  
 
-print(NAND(0,0))  
-print(NAND(1,0))  
-print(NAND(0,1))  
-print(NAND(1,1))  
-'''
+    def NAND(x1, x2):  
+        x = np.array([x1, x2])  
+        w = np.array([-0.5, -0.5])  
+        b = 0.7  
+        tmp = np.sum(w*x) + b  
+        if tmp <= 0:  
+            return 0  
+        else:  
+            return 1  
+    
+    print(NAND(0,0))  
+    print(NAND(1,0))  
+    print(NAND(0,1))  
+    print(NAND(1,1))  
+
 출력값
 
 1  
@@ -128,22 +127,22 @@ print(NAND(1,1))
 0  
 
 # OR 게이트 구현
-'''
-def OR(x1, x2):  
-    x = np.array([x1, x2])  
-    w = np.array([0.5, 0.5])  
-    b = -0.2  
-    tmp = np.sum(w*x) + b  
-    if tmp <= 0:  
-        return 0  
-    else:  
-        return 1  
 
-print(OR(0,0))    
-print(OR(1,0))    
-print(OR(0,1))  
-print(OR(1,1))  
-'''
+    def OR(x1, x2):  
+        x = np.array([x1, x2])  
+        w = np.array([0.5, 0.5])  
+        b = -0.2  
+        tmp = np.sum(w*x) + b  
+        if tmp <= 0:  
+            return 0  
+        else:  
+            return 1  
+    
+    print(OR(0,0))    
+    print(OR(1,0))    
+    print(OR(0,1))  
+    print(OR(1,1))  
+
 출력값
 
 0  
@@ -152,18 +151,18 @@ print(OR(1,1))
 1  
 
 # XOR 게이트 구현
-'''
-def XOR(x1, x2):   
-    s1 = NAND(x1, x2)   
-    s2 = OR(x1, x2)  
-    y = AND(s1, s2)   
-    return y   
 
-print(XOR(0,0))    
-print(XOR(1,0))    
-print(XOR(0,1))  
-print(XOR(1,1))   
-'''
+    def XOR(x1, x2):   
+        s1 = NAND(x1, x2)   
+        s2 = OR(x1, x2)  
+        y = AND(s1, s2)   
+        return y   
+    
+    print(XOR(0,0))    
+    print(XOR(1,0))    
+    print(XOR(0,1))  
+    print(XOR(1,1))   
+
 출력값
 
 0  
