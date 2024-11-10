@@ -102,7 +102,7 @@ np.sum(w*x)에서 w와 x의 각 요소를 곱하고 그 결과를 더하여 하�
     print(AND(0,1))  
     print(AND(1,1))  
 
-# NAND 게이트 구현
+# 📌 NAND 게이트 구현
 
     def NAND(x1, x2):  
         x = np.array([x1, x2])  
@@ -126,7 +126,7 @@ np.sum(w*x)에서 w와 x의 각 요소를 곱하고 그 결과를 더하여 하�
 1  
 0  
 
-# OR 게이트 구현
+# 📌 OR 게이트 구현
 
     def OR(x1, x2):  
         x = np.array([x1, x2])  
@@ -150,7 +150,7 @@ np.sum(w*x)에서 w와 x의 각 요소를 곱하고 그 결과를 더하여 하�
 1  
 1  
 
-# XOR 게이트 구현
+# 📌 XOR 게이트 구현
 
     def XOR(x1, x2):   
         s1 = NAND(x1, x2)   
