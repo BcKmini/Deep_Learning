@@ -42,7 +42,7 @@
 
 # 이미지 순서대로 진행
 
-| 1본                             | 2번                          |
+| 1번                             | 2번                          |
 |------------------------------------------|-------------------------------------------|
 | ![첫 번째 이미지](https://github.com/user-attachments/assets/0cb33dce-21bd-4967-83aa-7a269f4ed4ad) | ![두 번째 이미지](https://github.com/user-attachments/assets/159ae374-a11b-4b48-b2d5-f9edc28559fa) |
 
