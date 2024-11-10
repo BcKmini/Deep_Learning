@@ -1,4 +1,5 @@
-# Deep-learning-from-scratch ( 밑바닥부터 시작하는 딥러닝 )  
+# Deep-learning-from-scratch
+# (밑바닥부터 시작하는 딥러닝)  
 참고 : https://github.com/WegraLee/deep-learning-from-scratch  
 ![1234](https://github.com/user-attachments/assets/f6128a33-6b6f-4b3c-acc5-48ac861e11bc)
 
